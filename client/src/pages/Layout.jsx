@@ -3,11 +3,12 @@ import { Outlet } from 'react-router-dom'
 
 function Layout() {
   return (
-    <div>Layout
-        <div>
-            <Outlet/>
-        </div>
+    <div>
+ <div>Layout</div>
+<div><Outlet/></div>
     </div>
+   
+    
   )
 }
 

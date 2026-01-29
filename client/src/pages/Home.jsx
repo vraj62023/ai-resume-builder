@@ -1,16 +1,12 @@
 import React from 'react'
-import Banner from '../components/home/Banner'
-import Hero from '../components/home/Hero'
-import Features from '../components/home/features'
-import Testimonial from '../components/home/Testimonial'
+import Banner from '../components/Home/banner'
+import {HeroSection} from '../components/Home/HeroSection'
 
 function Home() {
   return (
     <div>
-        <Banner />
-        <Hero/>
-        <Features/>
-        <Testimonial/>
+        {/* <Banner/> */}
+        <HeroSection/>
     </div>
   )
 }

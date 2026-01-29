@@ -1,8 +1,11 @@
 import React from 'react'
+import FiberBackground from '../components/Home/FibreBackground'
 
 function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <div>
+      <FiberBackground/>
+    </div>
   )
 }
 
