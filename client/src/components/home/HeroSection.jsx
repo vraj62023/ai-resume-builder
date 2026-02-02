@@ -3,6 +3,7 @@ import logo from "../../assets/logo.png";
 import { useEffect, useState } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import FiberBackground from './FibreBackground.jsx';
+import { Link } from "react-router-dom";
 
 export function HeroSection() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -24,27 +25,27 @@ export function HeroSection() {
 
       {/* Navigation */}
       <nav className="relative z-50 flex w-full items-center justify-between bg-black/20 px-6 backdrop-blur md:px-16 lg:px-24 xl:px-32">
-        <a href="https://prebuiltui.com" className="flex-shrink-0">
+        <a href="#" className="flex-shrink-0">
          <img src={logo} alt="logo" className="w-20 mt-1 pt-2"/>
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden items-center gap-8 md:flex">
-          <a href="#products" className="transition hover:text-slate-300">Home</a>
-          <a href="#resources" className="transition hover:text-slate-300">Templates</a>
-          <a href="#stories" className="transition hover:text-slate-300">Stories</a>
-          <a href="#pricing" className="transition hover:text-slate-300">Pricing</a>
+        <div className="hidden items-center gap-8 lg:flex">
+          <a href="#" className="transition hover:text-indigo-300 ">Home</a>
+          <a href="#features" className="transition hover:text-indigo-300">Features</a>
+          <a href="#testimonials" className="transition hover:text-indigo-300">Testimonials</a>
+          <a href="#contact" className="transition hover:text-indigo-300">Contact</a>
         </div>
 
-        <div className="hidden space-x-3 md:block">
-          <a href="/login" className="rounded-md bg-indigo-600 px-6 py-2 text-white transition hover:bg-indigo-700">Get started</a>     
-          <a className="rounded-md border border-slate-400 px-6 py-2 transition hover:bg-slate-300/20" href="/login">Login</a>
+        <div className="hidden space-x-3 lg:block">
+          <Link to = "/login?state=signup" className="rounded-md bg-indigo-600 px-6 py-2 text-white transition hover:bg-indigo-700">Get started</Link>     
+          <Link to='/login?state=login' className="rounded-md border border-indigo-400 px-6 py-2 transition hover:bg-indigo-300/20" href="/login">Login</Link>
         </div>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(true)}
-          className="active:scale-90 transition md:hidden"
+          className="active:scale-90 transition lg:hidden"
         >
           <Menu size={26} />
         </button>
@@ -52,15 +53,17 @@ export function HeroSection() {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-black/60 text-lg backdrop-blur md:hidden">
-          <a href="#products" className="transition hover:text-slate-300">Products</a>
-          <a href="#resources" className="transition hover:text-slate-300">Resources</a>
-          <a href="#stories" className="transition hover:text-slate-300">Stories</a>
-          <a href="#pricing" className="transition hover:text-slate-300">Pricing</a>
+        <div className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 bg-black/60 text-lg backdrop-blur lg:hidden">
+          <a href="#" className="transition hover:text-indigo-300">Home</a>
+          <a href="#features" className="transition hover:text-indigo-300">Features</a>
+          <a href="#testimonials" className="transition hover:text-indigo-300">Testimonials</a>
+          <a href="#contact" className="transition hover:text-indigo-300">Contact</a>
+          <Link to = "/login?state=signup" className="rounded-md bg-indigo-600 px-6 py-2 text-white transition hover:bg-indigo-700">Get started</Link>     
+          <Link to='/login?state=login' className="rounded-md border border-indigo-400 px-6 py-2 transition hover:bg-indigo-300/20" href="/login">Login</Link>
 
           <button
             onClick={() => setMobileMenuOpen(false)}
-            className="flex size-10 items-center justify-center rounded-md bg-slate-100 p-1 text-black transition hover:bg-slate-200 active:ring-3 active:ring-white"
+            className="flex size-10 items-center justify-center rounded-md bg-indigo-100 p-1 text-black transition hover:bg-indigo-200 active:ring-3 active:ring-white"
           >
             <X size={24} />
           </button>
@@ -68,8 +71,9 @@ export function HeroSection() {
       )}
 
       {/* Hero Content */}
+      
       <div className="relative z-10 flex flex-col items-center px-6 pt-16 sm:pt-20 md:pt-32">
-        <div className="flex items-center gap-2 rounded-full border border-slate-600 px-4 py-2 text-gray-50">
+        <div className="flex items-center gap-2 rounded-full border border-indigo-600 px-4 py-2 text-gray-50">
           <div className="size-2.5 rounded-full bg-green-500" />
           <span>ATS-Friendly • Modern Templates • 1-Click PDF</span>
         </div>
@@ -83,12 +87,12 @@ export function HeroSection() {
         </p>
 
         <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-          <button className="group flex items-center gap-2 rounded-lg bg-indigo-600 px-7 h-11 text-white transition active:scale-95 hover:bg-indigo-700">
+          <Link to="/app" className="group flex items-center gap-2 rounded-lg bg-indigo-600 px-7 h-11 text-white transition active:scale-95 hover:bg-indigo-700">
             Create Resume
             <ArrowRight size={20} className="transition group-hover:translate-x-1" />
-          </button>
+          </Link>
 
-          <button className="rounded-lg border border-slate-400 px-8 h-11 transition active:scale-95 hover:bg-white/10">
+          <button className="rounded-lg border border-indigo-400 px-8 h-11 transition active:scale-95 hover:bg-white/10">
             View Templates
           </button>
         </div>
