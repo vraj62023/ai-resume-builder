@@ -1,10 +1,10 @@
 import React from 'react'
-import Banner from '../components/Home/banner.jsx'
-import {HeroSection} from '../components/Home/HeroSection.jsx'
-import Features from '../components/Home/Features.jsx'
-import Testimonial from '../components/Home/Testimonial.jsx'
-import CallToAction from '../components/Home/CallToAction.jsx'
-import Footer from '../components/Home/footer.jsx'
+import Banner from '../components/home/Banner.jsx'
+import {HeroSection} from '../components/home/HeroSection.jsx'
+import Features from '../components/home/Features.jsx'
+import Testimonial from '../components/home/Testimonial.jsx'
+import CallToAction from '../components/home/CallToAction.jsx'
+import Footer from '../components/home/footer.jsx'
 
 function Home() {
   return (
