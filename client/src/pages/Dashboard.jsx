@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
-import FiberBackground from '../components/Home/FibreBackground'
+import FiberBackground from '../components/home/FibreBackground.jsx'
 import { PlusIcon, UploadCloudIcon, FilePenLineIcon, TrashIcon, PencilIcon, XIcon, UploadCloud, LoaderCircleIcon } from 'lucide-react'
 import{ dummyResumeData} from '../assets/assets.js'
 import { useNavigate } from 'react-router-dom'
