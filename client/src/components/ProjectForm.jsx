@@ -48,7 +48,7 @@ const addProject = () => {
               </div>
               <div className='grid gap-3'>
                 <input value={project.name || ""} onChange={(e) => updateProject(index, "name", e.target.value)} type="text" placeholder='project name' className='px-3 py-2 text-sm' />
-                <input value={project.type || ""} onChange={(e) => updateProject(index, "type", e.target.value)} type="text" placeholder='project name' className='px-3 py-2 text-sm' />
+                <input value={project.type || ""} onChange={(e) => updateProject(index, "type", e.target.value)} type="text" placeholder='project type' className='px-3 py-2 text-sm' />
                 <textarea value={project.description || ""} rows={4} onChange={(e) => updateProject(index, "description", e.target.value)}  placeholder='project description' className='w-full px-3 py-2 text-sm rounded-lg resize-none' />
               </div>
             </div>

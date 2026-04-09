@@ -4,8 +4,11 @@ import { useEffect, useState } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import FiberBackground from './FibreBackground.jsx';
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export function HeroSection() {
+
+  const {user}= useSelector(state=>state.auth)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -38,9 +41,12 @@ export function HeroSection() {
         </div>
 
         <div className="hidden space-x-3 lg:block">
-          <Link to = "/login?state=signup" className="rounded-md bg-indigo-600 px-6 py-2 text-white transition hover:bg-indigo-700">Get started</Link>     
-          <Link to='/login?state=login' className="rounded-md border border-indigo-400 px-6 py-2 transition hover:bg-indigo-300/20" href="/login">Login</Link>
+          <Link to = "/app?state=register" className="rounded-md bg-indigo-600 px-6 py-2 text-white transition hover:bg-indigo-700" hidden={user}>Get started</Link>     
+          <Link to='/app?state=login' className="rounded-md border border-indigo-400 px-6 py-2 transition hover:bg-indigo-300/20" hidden={user}>Login</Link>
         </div>
+        <Link to='/app' className="hidden md:block px-8 py-2 bg-green-500 hover:bg-green-700 active:scale-95 transition-all rounded-full text-white" hidden={!user}>
+          Dashboard
+        </Link>
 
         {/* Mobile Menu Button */}
         <button
@@ -58,9 +64,11 @@ export function HeroSection() {
           <a href="#features" className="transition hover:text-indigo-300">Features</a>
           <a href="#testimonials" className="transition hover:text-indigo-300">Testimonials</a>
           <a href="#contact" className="transition hover:text-indigo-300">Contact</a>
-          <Link to = "/login?state=signup" className="rounded-md bg-indigo-600 px-6 py-2 text-white transition hover:bg-indigo-700">Get started</Link>     
-          <Link to='/login?state=login' className="rounded-md border border-indigo-400 px-6 py-2 transition hover:bg-indigo-300/20" href="/login">Login</Link>
-
+          <Link to = "/app?state=register" className="rounded-md bg-indigo-600 px-6 py-2 text-white transition hover:bg-indigo-700" hidden={user}>Get started</Link>     
+          <Link to='/app?state=login' className="rounded-md border border-indigo-400 px-6 py-2 transition hover:bg-indigo-300/20" hidden={user}>Login</Link>
+<Link to="/app" className="hidden mg:block px-8 py-2 bg-green-500 hover:bg-green-700 active:scale-95 transition-all rounded-full text-white" hidden={!user}>
+Dashboard
+</Link>
           <button
             onClick={() => setMobileMenuOpen(false)}
             className="flex size-10 items-center justify-center rounded-md bg-indigo-100 p-1 text-black transition hover:bg-indigo-200 active:ring-3 active:ring-white"

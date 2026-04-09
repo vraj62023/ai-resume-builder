@@ -4,7 +4,7 @@ import React from 'react'
 function EducationForm({data, onChange}) {
     const addEducation = () => {
     const newEducation = {
-      Institute: "",
+      institution: "",
       degree: "",
       field: "",
       graduation_date: "",
@@ -49,7 +49,7 @@ function EducationForm({data, onChange}) {
                 </button>
               </div>
               <div className='grid md:grid-cols-2 gap-3'>
-                <input value={education.institute || ""} onChange={(e) => updateEducation(index, "institute", e.target.value)} type="text" placeholder='institute name' className='px-3 py-2 text-sm' />
+                <input value={education.institution || ""} onChange={(e) => updateEducation(index, "institution", e.target.value)} type="text" placeholder='institute name' className='px-3 py-2 text-sm' />
                 <input value={education.degree || ""} onChange={(e) => updateEducation(index, "degree", e.target.value)} type="text" placeholder='degree' className='px-3 py-2 text-sm ' />
                 <input value={education.field || ""} onChange={(e) => updateEducation(index, "field", e.target.value)} type="text" placeholder='field of study' className='px-3 py-2 text-sm ' />
                 <input value={education.graduation_date || ""} onChange={(e) => updateEducation(index, "graduation_date", e.target.value)} type="month" className='px-3 py-2 text-sm ' />

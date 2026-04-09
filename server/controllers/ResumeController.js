@@ -27,7 +27,7 @@ export const deleteResume = async (req, res) => {
         const { resumeId } = req.params;
         await Resume.findOneAndDelete({ userId, _id: resumeId })
         //return success msg
-        return res.status(200).json({ message: 'Resume created successfully' })
+        return res.status(200).json({ message: 'Resume deleted successfully' })
     } catch (error) {
         return res.status(400).json({ message: error.message })
     }
@@ -74,7 +74,12 @@ export const updateResume = async (req, res) => {
         const userId = req.userId;
         const { resumeId, resumeData, removeBackground } = req.body;
         const image = req.file;
-        let resumeDataCopy = JSON.parse(resumeData);
+        let resumeDataCopy;
+        if(typeof resumeData==='string'){
+            resumeDataCopy=await JSON.parse(resumeData)
+        }else{
+            resumeDataCopy=structuredClone(resumeData)
+        }
         if (image) {
             const imageBufferData = fs.createReadStream(image.path);
             const response = await imagekit.files.upload({
@@ -91,6 +96,8 @@ export const updateResume = async (req, res) => {
         const resume = await Resume.findOneAndUpdate({ userId, _id: resumeId }, resumeDataCopy, { new: true })
         return res.status(200).json({ message: "saved successfully", resume })
     } catch (error) {
-        return res.status(400).json({ message: error.message })
+          console.log("here is the error",error)
+        return res.status(444).json({ message: error.message })
+      
     }
 }
