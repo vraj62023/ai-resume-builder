@@ -1,6 +1,6 @@
 # 📄 Full Stack AI Resume Builder
 
-**🚀 [Experience the Live Demo Here](https://airesumebuilder-frontend-3mmc.onrender.com/app)**
+**🚀 [Experience the Live Demo Here](https://airesumebuilder-frontend-3mmc.onrender.com)**
 
 A comprehensive, end-to-end MERN stack application that allows users to create professional, ATS-friendly resumes with real-time previews. This project leverages artificial intelligence to optimize content and utilizes specialized media services for seamless image processing.
 
